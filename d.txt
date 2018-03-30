@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class eq1 {
+	
+	long nNext;
+	
+	
+	public void calc(long n1) {
+		
+	
+		
+		if ( (n1 % 2) == 0 ) {
+			
+			nNext = (n1 / 2);
+			
+			System.out.println(nNext);
+			
+			this.calc2();
+			
+		} else {
+			
+			nNext = (n1*3 + 1);
+			
+			System.out.println(nNext);
+			
+			this.calc2();
+			
+		}
+			
+		
+	}
+	
+	public void calc2() {
+		
+		
+	if (nNext == 1) {
+		
+		System.out.println("Welp, it looks like the conjecture still stands to be disproven.");
+		
+		System.exit(0);
+		
+		
+		} else {
+		
+	
+		
+			if ( (nNext % 2) == 0 ) {
+				
+				nNext = (nNext / 2);
+				
+				System.out.println(nNext);
+				
+				this.calc2();
+				
+			} else {
+				
+				nNext = (nNext*3 + 1);
+				
+				System.out.println(nNext);
+				
+				this.calc2();
+				
+			}
+			
+		}
+			
+		
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("Please enter a whole number to see if it reaches 1, under the rules of the collatz conjecture (up to 20 number places). Hint, it will. If it doesn't, you will be famous in the math world.");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		long input = sc.nextLong();
+		
+		eq1 run = new eq1();
+		
+		run.calc(input);
+		
+		sc.close();
+
+	}
+	
+
+
+}
